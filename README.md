@@ -13,4 +13,5 @@ ground-rule for fully autonomous claude code
 5. Easy way to figure out all requirements are done or not: review the whole post yourself(or with Codex, Subagent, ...), and then they will check that the user(supervisor)'s requirements are all done or not and user will satisfy or not.
 6. Refactor regularly. Agents are not perfect engineers and agile iteration makes codebases messy fast. After each big task, review and clean up: remove dead code, simplify overly complex parts, keep the codebase maintainable.
 7. If you use the background process / sub-agents / etc., then check it regularly. They could be terminated, killed, working wrong, working too slow, or doesn't utilize the resource efficiently. So you should check they doing well or not regularly.
+8. Push to the git regulary.
 ```
