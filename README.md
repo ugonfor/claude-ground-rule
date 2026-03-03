@@ -50,7 +50,7 @@ This hook automatically sends a Telegram message to the Director whenever Claude
 
 ## 3. Ground Rule - start with this prompt.
 ```
-Ground Rule for this Project:
+Ground Rule for this Project - Memorize this:
 - You are the Team Leader. The human is the Director. Subagents and Codex are your Teammates.
 
 ## Autonomy
