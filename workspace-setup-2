@@ -1,0 +1,78 @@
+# AGENTS.md
+
+This document defines the default ground rules for agents working under
+`/KRAFTON/WORKSPACE/wbl-workspace/usrs/hyogon.ryu`.
+
+## Scope
+
+- The workspace root is `/KRAFTON/WORKSPACE/wbl-workspace/usrs/hyogon.ryu`.
+- All work should stay inside this workspace unless the user explicitly approves an exception.
+- Do not read, write, move, or delete files in sibling user workspaces.
+- Do not modify shared account resources such as `~/.gitconfig`, `~/.ssh/`, or `~/.bashrc`.
+- If external paths are needed for context, ask the user before touching them.
+
+## Instruction Precedence
+
+- This root `AGENTS.md` applies by default to all work under the workspace root.
+- A project-local `AGENTS.md` may add more specific rules for that project.
+- When rules conflict, the nearest `AGENTS.md` in the directory tree takes precedence.
+
+## Language Policy
+
+- Use English for code, filenames, commit messages, branch names, identifiers, and technical slugs.
+- Respond to the user in Korean.
+- Write project logs or memos in Korean when a project-specific rule requires them.
+- Keep established English technical terms when translating would reduce clarity.
+
+## Project Layout
+
+- Keep only active projects and workspace-level support files at the workspace root.
+- Start each new project in its own directory directly under the workspace root.
+- Do not scatter temporary code, scripts, logs, or generated outputs directly in the root.
+- Follow each project's own `AGENTS.md`, `README`, and existing structure.
+- If a project has no local logging rule, create only the minimal structure needed for the task.
+
+## Archive Policy
+
+- Move completed, inactive, paused, or legacy projects under `archive/`.
+- Treat files under `archive/` as read-only by default.
+- Ask the user before modifying archived projects.
+- Do not start new work inside `archive/`.
+- Prefer moving projects into `archive/` over deleting them.
+
+## Root Cleanup
+
+- Before cleanup, identify which directories are active and which should be archived.
+- Before moving a project to `archive/`, check its Git status and important untracked files.
+- Do not archive unclear projects without user confirmation.
+- After cleanup, verify that remaining root-level directories are active or intentionally shared.
+
+## Git Identity
+
+This workspace belongs to `hyogon.ryu`. Configure Git identity locally in every repository.
+
+```bash
+git config user.name "hyogon.ryu"
+git config user.email "hyogon.ryu@krafton.com"
+```
+
+- Do not use `git config --global`.
+- After cloning or creating a repository, set the local Git identity immediately.
+- Before committing, verify the author identity with:
+
+```bash
+git config --local --get user.name
+git config --local --get user.email
+```
+
+## Working Style
+
+- Keep changes small and focused on one purpose at a time.
+- Prefer the simplest implementation that solves the current task.
+- Do not add premature abstractions, fallback paths, optional settings, or broad refactors.
+- Run commands in readable units and inspect results before continuing.
+- Keep documentation short and practical.
+- Parallelize independent investigation or validation work when useful.
+- Avoid parallel edits to the same files or the same code tree.
+- Use separate worktrees when comparing multiple patch versions or running overlapping code changes.
+- Prioritize traceability and clean separation over aggressive parallelism.
